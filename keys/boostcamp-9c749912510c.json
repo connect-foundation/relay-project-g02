@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "boostcamp",
+  "private_key_id": "9c749912510cf0f25daae0e62e12d7e069d4144d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCezXnifvGFMmpK\nZbbEwQCK/mfQercvAqjvGkIRJHUYPF6OaxkG55SUvN/ZP4aTpuYFC0DvgSeLGNE2\nR52PcfLDq0qMG/UUMhfuctDbHYqb6u7RcbDTkGRfULzEzgjxizrcJap+CId5xxrX\nmfPs+snEAfkvG17xohNavMwTDLZsb8wjV+BVNXyTIPYz3RJGMPVt56eBzL79HpHe\n54A6ad5pHWghINg5jRgfJqf+1B6N5YliJp5I2TmkH4GjnQ+5qKAdK/6PSl7fwzEV\nKhG2epawNnUTqAtpt7lA/dbCVNQCrDG4iXrUpep0Hygx4FmDI2JUpDsF1bqWVCE/\nSEQbsixxAgMBAAECggEAAhM2VMMHRfOKuS8XkMU4Ey43A3MiKiUtDuE5CoEGeslJ\nmnaH9n5iWLn7pPAO0N9+EXXcNnFprshebexlJE70gX3fQUAntzNs7OgjyCC//50u\nsN6LXHDMi9n3M0YkuUYrDkFtaOyxG2KQkcEm4Z/TadW8btosyoLJzALRYRDmiwCQ\nQ5gzDLpdv7bse8LQuIC4ixllM48o5A5wZvnzBe3ug0Do5w5MGgHGwGFhSF5phr/B\n4miBbDenRD/y5OFxGfxFzszZh+np+E+AXNMd0rhABa0LaBsnesZw7mNetGpA8XMz\nP+xqsHxLwK8qBxDOmA7I8Cg+Wqzn/cOGX0lsZ9fILQKBgQDLuWhHrM6hSYt6gfk8\ntQZR8HD1unQ6MBV5Hi6nIxtg2YMrtMkqtCF0NHq+AfFK9abQAuNIlJFY0nEHfiKE\niT/E03oJS5Dp8vFwOKr2uDBh207dAmrENGYbpFkOGHE3I3JJTREp3sRgXXMaa21K\nMdyZHCFSPFqR24j6IrvRmSszJQKBgQDHjS4fc4ohSjJVe74S3uqinSUHAbBSezXR\nLIA3PCw0WTXcrFr8SsYEYJ0VmaE3PiVwwU52cjej/0v3gtadMnCsmSyZPK7BLcfg\nzNd22ZCb56Bll8kOdtGKoWUS3WbymS6FjvgWXUbiI/Mt947jYXBW/lA4Fpq0m3uv\nhHD4a+a4XQKBgHxpuyRihUH8XwCu1V3ck4KA2wtGFerfKI3x/720c+jejPupCV1Z\n6kBEOF1HZGtJv9iymsjdajIbOknAHyZfhyEVoSaCDnrBEe9dvBK2A14Ph4bzDe7K\nrTzeTkCMbr+klwvq07uFPto2169fwbuY3cZnZnYJQ6plrq5LffYPm1E9AoGAXC4p\nejnjOxGNQtPQr+LtvISfECeFjfSAncnSyLExMlVrfi7YMOdRpcADkHDRejVpEjcZ\nybllXoqWSxXTkfY0+mYfpgHUMES3qm61sZ87H+nVvFhrdhUJIuL/T8GaxsJgLS4o\nCBy6m8hDk55iEUN3o5gC8oXunTOd5SxnCzq877kCgYAWJMpCZtgS8rc2Bg7wKfXk\n/yJYk33Mw0B50h6AOb9StQAeR+FS2SP5uMWsB3y7cZ8h54A7gxfFYbaKAr2eeLbB\nCO6kuHmLXJe2LYd3TnBPhBqk5VW79ACtJsTmgfbSAu9za1zUzHUS1PK2yBBE/7UQ\nEvxiqzuk6Gx2v3AmBWmbhQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "boostcamp@boostcamp.iam.gserviceaccount.com",
+  "client_id": "117938994638093928573",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/boostcamp%40boostcamp.iam.gserviceaccount.com"
+}
