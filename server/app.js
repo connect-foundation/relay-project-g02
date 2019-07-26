@@ -41,6 +41,10 @@ app.post('/upload', upload.single('userfile'), async function(req, res){
     await start(`./${req.file.path}`)
     console.log(req.file); // 콘솔(터미널)을 통해서 req.file Object 내용 확인 가능.
 });
+
+app.use(express.static('front'));
+
 app.listen(port, function() {
 	console.log('ex-app listen port : '+ port);
 });
+
