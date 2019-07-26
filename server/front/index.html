@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./index.css">
-    <script src="./index.js"></script>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="./index.css">
+   <script src="./index.js"></script>
 </head>
 <body>
 <header>
-    <h1>부캠 스캐너</h1>
+   <h1>부캠 스캐너</h1>
 </header>
 
 <section>
 
-    <form id="inputFileForm">
-        <div class="input-group">
-            <div class="custom-file">
-                <input type="file" name="userfile" class="custom-file-input" id="inputFile" name="userfile"
-                       aria-describedby="inputFileBtn" accept=".jpg, .jpeg, .png">
-                <label class="custom-file-label" for="inputFile" id="inputFileLabel">파일 선택하기</label>
-            </div>
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit" id="inputFileBtn">제출하기</button>
-            </div>
-        </div>
-    </form>
+   <form id="inputFileForm" onsubmit="return false">
+       <div class="input-group">
+           <div class="custom-file">
+               <input type="file" name="userfile" class="custom-file-input" id="inputFile" name="userfile"
+                      aria-describedby="inputFileBtn" accept=".jpg, .jpeg, .png">
+               <label class="custom-file-label" for="inputFile" id="inputFileLabel">파일 선택하기</label>
+           </div>
+           <div class="input-group-append">
+               <button class="btn btn-outline-secondary" type="submit" id="inputFileBtn">제출하기</button>
+           </div>
+       </div>
+   </form>
 </section>
 
 <section>
+   <h2>결과</h2>
+   <div class="text-container">
+       <p id="resultText"></p>
+   </div>
 </section>
 </body>
 </html>

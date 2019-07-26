@@ -21,9 +21,9 @@ async function start(filename){
   detections.forEach(text => {
       str += `${text.description}`
   });
-  console.log(str);
   let fn = filename.slice(0, -4);
   fs.writeFileSync(`./${fn}.txt`, str, "utf8");
+  return str;
 }
 const multer = require('multer');
 // let upload = multer({ dest: 'uploads/' })
@@ -40,9 +40,9 @@ let upload = multer({ storage: storage })
 app.use('/uploads', express.static('uploads'));
 app.use(express.static('front'));
 app.post('/upload', upload.single('userfile'), async function(req, res){
-    res.send('Uploaded! : '+req.file); // object를 리턴함
-    await start(`./${req.file.path}`)
-    console.log(req.file); // 콘솔(터미널)을 통해서 req.file Object 내용 확인 가능.
+    let result = await start(`./${req.file.path}`)
+    console.log(result)
+    res.send(result); // 콘솔(터미널)을 통해서 req.file Object 내용 확인 가능.
 });
 
 app.use(express.static('front'));

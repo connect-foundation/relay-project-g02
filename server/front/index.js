@@ -3,9 +3,9 @@ const changeInputFileLabel = () => {
     inputFile.addEventListener('change', () => {
         document.getElementById('inputFileLabel').innerText = inputFile.files[0].name;
     });
-};
-
-const sendInputFileImage = () => {
+ };
+ 
+ const sendInputFileImage = () => {
     document.getElementById('inputFileForm')
         .addEventListener('submit', (event) => {
             const formData = new FormData(event.target);
@@ -18,11 +18,16 @@ const sendInputFileImage = () => {
                     'Content-Type': 'form-data'
                 }
             };
-            fetch(url, options);
+            fetch(url, options).then(res => {
+                console.log(res);
+                document.getElementById('resultText').innerHTML = 'Image uploaded!!';
+            });
+            // document.getElementById('resultText').innerHTML = 'Image uploaded!!';
+ 
         });
-};
-
-window.onload = () => {
+ };
+ 
+ window.onload = () => {
     changeInputFileLabel();
     sendInputFileImage();
-};
+ };
