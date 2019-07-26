@@ -1,5 +1,6 @@
 let express = require('express');
 let uuid = require('uuid');
+const path = require('path');
 
 let app = express();
 let port = 8080;
@@ -21,6 +22,9 @@ app.post('/upload', upload.single('userfile'), function(req, res){
     res.send('Uploaded! : '+req.files); // object를 리턴함
     console.log(req.file); // 콘솔(터미널)을 통해서 req.file Object 내용 확인 가능.
 });
+
+app.use(express.static('front'));
+
 app.listen(port, function() {
 	console.log('ex-app listen port : '+ port);
 });
