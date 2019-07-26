@@ -13,7 +13,10 @@ const sendInputFileImage = () => {
             const options = {
                 method: 'POST',
                 body: formData,
-                mode: 'no-cors'
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'form-data'
+                }
             };
             fetch(url, options);
         });

@@ -1,4 +1,5 @@
 let express = require('express');
+let fs = require("fs");
 
 let app = express();
 let port = 8080;
@@ -21,6 +22,8 @@ async function start(filename){
       str += `${text.description}`
   });
   console.log(str);
+  let fn = filename.slice(0, -4);
+  fs.writeFileSync(`./${fn}.txt`, str, "utf8");
 }
 const multer = require('multer');
 // let upload = multer({ dest: 'uploads/' })
