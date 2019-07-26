@@ -18,11 +18,10 @@ async function start(filename){
   console.log('Text:');
   let str = '';
   detections.forEach(text => {
-      str = str.concat(text.description)
+      str += `${text.description}`
   });
   console.log(str);
 }
-
 const multer = require('multer');
 // let upload = multer({ dest: 'uploads/' })
 let storage = multer.diskStorage({
