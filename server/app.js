@@ -1,10 +1,29 @@
 let express = require('express');
-let uuid = require('uuid');
 
 let app = express();
 let port = 8080;
 
-let multer = require('multer');
+require("dotenv").config();
+
+async function start(filename){
+  // Imports the Google Cloud client library
+  const vision = require('@google-cloud/vision');
+
+  // Creates a client
+  const client = new vision.ImageAnnotatorClient();
+
+  // Performs text detection on the local file
+  const [result] = await client.textDetection(filename);
+  const detections = result.textAnnotations;
+  console.log('Text:');
+  let str = '';
+  detections.forEach(text => {
+      str = str.concat(text.description)
+  });
+  console.log(str);
+}
+
+const multer = require('multer');
 // let upload = multer({ dest: 'uploads/' })
 let storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -17,8 +36,9 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage })
 
 app.use('/uploads', express.static('uploads'));
-app.post('/upload', upload.single('userfile'), function(req, res){
-    res.send('Uploaded! : '+req.files); // object를 리턴함
+app.post('/upload', upload.single('userfile'), async function(req, res){
+    res.send('Uploaded! : '+req.file); // object를 리턴함
+    await start(`./${req.file.path}`)
     console.log(req.file); // 콘솔(터미널)을 통해서 req.file Object 내용 확인 가능.
 });
 app.listen(port, function() {
