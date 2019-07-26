@@ -35,6 +35,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage })
 
 app.use('/uploads', express.static('uploads'));
+app.use(express.static('front'));
 app.post('/upload', upload.single('userfile'), async function(req, res){
     res.send('Uploaded! : '+req.file); // object를 리턴함
     await start(`./${req.file.path}`)

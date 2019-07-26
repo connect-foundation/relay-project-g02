@@ -15,9 +15,7 @@ const sendInputFileImage = () => {
                 body: formData,
                 mode: 'no-cors'
             };
-
             fetch(url, options);
-
         });
 };
 
