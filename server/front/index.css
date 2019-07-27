@@ -10,3 +10,9 @@ header {
 section {
     padding: 1rem;
 }
+
+.ocr-container {
+    padding: 1rem;
+    background-color: black;
+    color: white;
+}

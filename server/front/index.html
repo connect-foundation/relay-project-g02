@@ -13,8 +13,7 @@
 </header>
 
 <section>
-
-    <form id="inputFileForm">
+    <form id="inputFileForm" onsubmit="return false">
         <div class="input-group">
             <div class="custom-file">
                 <input type="file" name="userfile" class="custom-file-input" id="inputFile" name="userfile"
@@ -29,6 +28,10 @@
 </section>
 
 <section>
+    <h2>OCR 결과</h2>
+    <div class="ocr-container">
+        <p id="ocrResult"></p>
+    </div>
 </section>
 </body>
 </html>

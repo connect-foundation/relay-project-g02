@@ -12,13 +12,15 @@ const sendInputFileImage = () => {
             const url = 'http://localhost:8080/upload';
             const options = {
                 method: 'POST',
-                body: formData,
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'form-data'
-                }
+                body: formData
             };
-            fetch(url, options);
+            fetch(url, options)
+                .then((response) => {
+                    console.log(response);
+                    document.getElementById('ocrResult').innerText = 'wow';
+                });
+            document.getElementById('ocrResult').innerText = 'wow';
+
         });
 };
 
