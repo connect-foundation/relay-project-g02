@@ -1,41 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./index.css">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css" />
     <script src="./index.js"></script>
-</head>
-<body>
-<header>
-    <h1>부캠 스캐너</h1>
-</header>
+  </head>
+  <body>
+    <header>
+      <img src="scan.png" style="padding-top:20px;height: 220px" />
+      <h1>Boostcamp Scanner</h1>
+    </header>
 
-<section>
-    <form id="inputFileForm" onsubmit="return false">
-        <div class="input-group">
-            <div class="custom-file">
-                <input type="file" name="userfile" class="custom-file-input" id="inputFile" name="userfile"
-                       aria-describedby="inputFileBtn" accept=".jpg, .jpeg, .png">
-                <label class="custom-file-label" for="inputFile" id="inputFileLabel">파일 선택하기</label>
-            </div>
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit" id="inputFileBtn">제출하기</button>
-            </div>
+    <section class="board">
+      <form id="inputFileForm" onsubmit="return false">
+        <div class="check">
+          <input type="checkbox" name="translate" value="ture" />번역
+          <input type="checkbox" name="rule" value="ture" />맞춤법
         </div>
-    </form>
-</section>
+        <div class="input-group" style="position: static">
+          <div class="custom-file">
+            <input
+              type="file"
+              name="userfile"
+              class="custom-file-input"
+              id="inputFile"
+              name="userfile"
+              aria-describedby="inputFileBtn"
+              accept=".jpg, .jpeg, .png"
+            />
+            <label class="custom-file-label" for="inputFile" id="inputFileLabel"
+              >파일 선택하기</label
+            >
+          </div>
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              type="submit"
+              id="inputFileBtn"
+            >
+              제출하기
+            </button>
+          </div>
+        </div>
+        <div class="my-img">
+          <img src="" alt="" id="requestImage" />
+        </div>
+      </form>
+    </section>
 
-<section>
-    <img src="" alt="" id="requestImage" style="visibility: hidden; max-width: 300px; max-height: 300px">
-</section>
-
-<section>
-    <h2>OCR 결과</h2>
-    <div class="ocr-container">
+    <section>
+      <h2>OCR 결과</h2>
+      <div class="ocr-container">
         <p id="ocrResult">[ 여기에 결과가 출력됩니다 ]</p>
-    </div>
-</section>
-</body>
+      </div>
+    </section>
+    <footer>
+      <span> 부스트캠프 파이팅! </span>
+    </footer>
+  </body>
 </html>

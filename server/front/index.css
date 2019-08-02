@@ -1,14 +1,72 @@
 html {
     margin: 0;
-    padding: 1rem;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    background-color: black;
+}
+
+h2 {
+    position: relative;
+    top: 20px;
+    color: #fff;
 }
 
 header {
+    font-size: 32px solid;
+    top: 0px;
+    height: 310px;
+    background-color: rgb(93, 205, 240);
     text-align: center;
 }
 
+h1 {
+    padding-bottom: 10px;
+}
+
 section {
-    padding: 1rem;
+    position: relative;
+    top: 50px;
+    text-align: center;
+}
+
+.board {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    max-width: fit-content;
+    background-image: url("./board.png");
+    background-repeat: no-repeat;
+}
+
+#inputFileForm {
+    width: 650px;
+    height: 430px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.board .check {
+    padding-top: 40px;
+    padding-right: 30px;
+}
+
+.check {
+    text-align: right;
+}
+
+.my-img {
+    position: relative;
+    top: 70px;
+    text-align: center;
+}
+
+.my-img img {
+    max-width: 90%;
+    visibility: hidden;
 }
 
 .ocr-container {
@@ -17,20 +75,35 @@ section {
     color: white;
 }
 
-.blinking{
-	-webkit-animation:blink 0.5s ease-in-out infinite alternate;
-    -moz-animation:blink 0.5s ease-in-out infinite alternate;
-    animation:blink 0.5s ease-in-out infinite alternate;
+.blinking {
+    -webkit-animation: blink 0.5s ease-in-out infinite alternate;
+    -moz-animation: blink 0.5s ease-in-out infinite alternate;
+    animation: blink 0.5s ease-in-out infinite alternate;
 }
-@-webkit-keyframes blink{
-    0% {opacity:0;}
-    100% {opacity:1;}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-@-moz-keyframes blink{
-    0% {opacity:0;}
-    100% {opacity:1;}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-@keyframes blink{
-    0% {opacity:0;}
-    100% {opacity:1;}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
