@@ -9,17 +9,48 @@ const port = 8080;
 const projectId = 'my-ocr-proj';
 const keyFilename = path.join(__dirname, '../keys/my-ocr-proj-3ead5d620204.json');
 
+const key = "AIzaSyAQRrXiza4ATn621-HJXem7tKPAGmHnVKc";
+      const sourceText =
+          "안녕하세요, 만나서 반갑습니다. 저는 구글 번역기입니다.";
+      const sourceLang = "ko";
+      const targetLang = "en";
+      const baseURL = `https://www.googleapis.com/language/translate/v2?q=${sourceText}&source=${sourceLang}&target=${targetLang}&key=${key}`;
+
 app.use(express.json());
 
 require("dotenv").config();
 
-async function start(filename){
+function uploadDirCheck(){
+  try{
+    fs.accessSync(__dirname+"/uploads");
+  }
+  catch{
+    fs.mkdirSync(__dirname+"/uploads");
+  }
+}
+
+function nameMaker(){
+  const d=new Date(); // month+day+hour+minute+second
+  let fileName=d.getMonth().toString();
+  fileName+=d.getDay().toString();
+  fileName+=d.getHours().toString();
+  fileName+=d.getMinutes().toString();
+  fileName+=(d.getSeconds().toString()+".txt");
+  return fileName;
+}
+async function translateText(source, target, text, APIkey){
+  fetch(baseURL, result => {
+    console.log(result);
+    console.log("translation: ", result.translations[0].translatedText);
+  });
+}
+
+async function ocrConvert(filename){
   const vision = require('@google-cloud/vision');
   // Creates a client
   const client = new vision.ImageAnnotatorClient({
     projectId, keyFilename
   });
-
   // Performs text detection on the local file
   console.log(filename);
   const [result] = await client.textDetection(filename);
@@ -43,8 +74,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'front')));
 
 app.post('/upload', upload.single('userfile'), async (req, res) => {
-  console.log(req.file);
-  const result = await start(req.file.path);
+  let result= await ocrConvert(req.file.path);
+  if(req.body.translate){
+    await translateText(sourceLang,targetLang,result,key);
+  }
+  fs.writeFileSync(__dirname+`/uploads/${nameMaker()}`,result,'utf8');
   res.status(201).json({
     result,
     filepath: '/uploads/'+req.file.filename 
@@ -53,6 +87,7 @@ app.post('/upload', upload.single('userfile'), async (req, res) => {
 
 
 app.listen(port, function() {
-	console.log('ex-app listen port : '+ port);
+  console.log('ex-app listen port : '+ port);
+  uploadDirCheck();
 });
 
