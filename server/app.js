@@ -13,13 +13,22 @@ app.use(express.json());
 
 require("dotenv").config();
 
+function uploadDirCheck(){
+  try{
+    fs.accessSync(__dirname+"/uploads");
+  }
+  catch{
+    fs.mkdirSync(__dirname+"/uploads");
+  }
+}
+
+
 async function start(filename){
   const vision = require('@google-cloud/vision');
   // Creates a client
   const client = new vision.ImageAnnotatorClient({
     projectId, keyFilename
   });
-
   // Performs text detection on the local file
   console.log(filename);
   const [result] = await client.textDetection(filename);
@@ -45,14 +54,17 @@ app.use(express.static(path.join(__dirname, 'front')));
 app.post('/upload', upload.single('userfile'), async (req, res) => {
   console.log(req.file);
   const result = await start(req.file.path);
+  fs.writeFileSync(__dirname+"/text.txt",result,'utf8');
   res.status(201).json({
     result,
     filepath: '/uploads/'+req.file.filename 
   });
 });
 
+//translate <-- 
 
 app.listen(port, function() {
-	console.log('ex-app listen port : '+ port);
+  console.log('ex-app listen port : '+ port);
+  uploadDirCheck();
 });
 
