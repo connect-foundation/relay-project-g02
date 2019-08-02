@@ -15,19 +15,15 @@ h2 {
 }
 
 header {
+    font-size: 32px solid;
     top: 0px;
-    background-color: rgb(110, 221, 110);
+    height: 310px;
+    background-color: rgb(93, 205, 240);
     text-align: center;
 }
 
-footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-    height: 10%;
-    font-size: 32px;
-    text-align: center;
-    background-color: rgb(110, 221, 110);
+h1 {
+    padding-bottom: 10px;
 }
 
 section {
