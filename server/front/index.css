@@ -11,6 +11,7 @@ body {
 header {
     background-color: rgb(0%, 39.2%, 0%);
     text-align: center;
+    height: 40%;
 }
 
 section {
@@ -26,7 +27,7 @@ section {
 }
 
 .my-img img {
-    background-color: max-width: 70%;
+    max-width: 70%;
     max-height: 20%;
     visibility: hidden;
 }

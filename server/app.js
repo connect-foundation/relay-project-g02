@@ -22,13 +22,6 @@ function uploadDirCheck(){
   }
 }
 
-function optionCheck(isTranslate, isRule){
-  if(isTranslate && isRule) return "번역과교정";
-  else if(isTranslate) return "번역";
-  else if(isRule) return "교정";
-  else return "원본";
-}
-
 function nameMaker(){
   const d=new Date(); // month+day+hour+minute+second
   let fileName=d.getMonth().toString();
@@ -69,22 +62,16 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'front')));
 
 app.post('/upload', upload.single('userfile'), async (req, res) => {
-  const optionMenu=optionCheck(req.body.translate, req.body.rule);
-  switch(optionMenu){
-    case "둘다":
+  let result;
+  if(req.body.translate){
 
-    case "번역":
-
-    case "교정":
-
-    case "원본":
-      
+  }else{
+    result = await start(req.file.path);
+    res.status(201).json({
+      result,
+      filepath: '/uploads/'+req.file.filename 
+    });
   }
-
-  res.status(201).json({
-    result,
-    filepath: '/uploads/'+req.file.filename 
-  });
 });
 
 
