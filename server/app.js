@@ -11,13 +11,6 @@ const port = 8080;
 const projectId = 'my-ocr-proj';
 const keyFilename = path.join(__dirname, '../keys/my-ocr-proj-3ead5d620204.json');
 
-const key = "AIzaSyAQRrXiza4ATn621-HJXem7tKPAGmHnVKc";
-      const sourceText =
-          "안녕하세요, 만나서 반갑습니다. 저는 구글 번역기입니다.";
-      const sourceLang = "ko";
-      const targetLang = "en";
-      const baseURL = `https://www.googleapis.com/language/translate/v2?q=${sourceText}&source=${sourceLang}&target=${targetLang}&key=${key}`;
-
 app.use(express.json());
 
 require("dotenv").config();
