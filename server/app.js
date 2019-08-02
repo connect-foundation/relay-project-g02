@@ -1,6 +1,8 @@
 const express = require('express');
 const fs = require("fs");
 const path = require('path');
+const translateText=require("../api");
+const axios=require('axios');
 
 const app = express();
 const port = 8080;
@@ -38,12 +40,7 @@ function nameMaker(){
   fileName+=(d.getSeconds().toString()+".txt");
   return fileName;
 }
-async function translateText(source, target, text, APIkey){
-  fetch(baseURL, result => {
-    console.log(result);
-    console.log("translation: ", result.translations[0].translatedText);
-  });
-}
+
 
 async function ocrConvert(filename){
   const vision = require('@google-cloud/vision');
@@ -76,7 +73,7 @@ app.use(express.static(path.join(__dirname, 'front')));
 app.post('/upload', upload.single('userfile'), async (req, res) => {
   let result= await ocrConvert(req.file.path);
   if(req.body.translate){
-    await translateText(sourceLang,targetLang,result,key);
+    result= await translateText(result);
   }
   fs.writeFileSync(__dirname+`/uploads/${nameMaker()}`,result,'utf8');
   res.status(201).json({
