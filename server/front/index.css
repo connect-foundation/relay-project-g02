@@ -4,17 +4,58 @@ html {
 }
 
 body {
-    background-image: url("./littledeep_illustration_blackboard_style1.png");
-    background-repeat: no-repeat;
+    text-align: center;
+    background-color: black;
+}
+
+h2 {
+    position: relative;
+    top: 20px;
+    color: #fff;
 }
 
 header {
-    background-color: rgb(0%, 39.2%, 0%);
+    top: 0px;
+    background-color: rgb(110, 221, 110);
     text-align: center;
 }
 
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 10%;
+    font-size: 32px;
+    text-align: center;
+    background-color: rgb(110, 221, 110);
+}
+
 section {
-    padding: 1rem;
+    position: relative;
+    top: 50px;
+    text-align: center;
+}
+
+.board {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    max-width: fit-content;
+    background-image: url("./board.png");
+    background-repeat: no-repeat;
+}
+
+#inputFileForm {
+    width: 650px;
+    height: 430px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.board .check {
+    padding-top: 40px;
+    padding-right: 30px;
 }
 
 .check {
@@ -22,12 +63,13 @@ section {
 }
 
 .my-img {
+    position: relative;
+    top: 70px;
     text-align: center;
 }
 
 .my-img img {
-    background-color: max-width: 70%;
-    max-height: 20%;
+    max-width: 90%;
     visibility: hidden;
 }
 
