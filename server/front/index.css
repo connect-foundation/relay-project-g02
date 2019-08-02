@@ -66,12 +66,8 @@ section {
 }
 
 .my-img img {
-<<<<<<< HEAD
-    max-width: 70%;
-    max-height: 20%;
-=======
     max-width: 90%;
->>>>>>> 56655ce5717a83df01f8f9ee2362bd170a473342
+    max-height: 70%;
     visibility: hidden;
 }
 
