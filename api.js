@@ -7,8 +7,7 @@ async function translate(sourceText) {
     const targetLang = "en";
     const translatedText = await axios.get(
         "https://www.googleapis.com/language/translate/v2",
-        { // 
-            params: {
+      {params: {
                 q: sourceText,
                 source: sourceLang,
                 target: targetLang,
