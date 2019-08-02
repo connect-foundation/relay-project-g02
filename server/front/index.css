@@ -66,7 +66,7 @@ section {
 
 .my-img img {
     max-width: 90%;
-    max-height: 90%;
+    max-height: 70%;
     visibility: hidden;
 }
 
