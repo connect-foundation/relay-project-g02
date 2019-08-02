@@ -22,6 +22,23 @@ function uploadDirCheck(){
   }
 }
 
+function optionCheck(isTranslate, isRule){
+  if(isTranslate && isRule) return "번역과교정";
+  else if(isTranslate) return "번역";
+  else if(isRule) return "교정";
+  else return "원본";
+}
+
+function nameMaker(){
+  const d=new Date(); // month+day+hour+minute+second
+  let fileName=d.getMonth().toString();
+  fileName+=d.getDay().toString();
+  fileName+=d.getHours().toString();
+  fileName+=d.getMinutes().toString();
+  fileName+=(d.getSeconds().toString()+".txt");
+  return fileName;
+}
+
 
 async function start(filename){
   const vision = require('@google-cloud/vision');
@@ -52,16 +69,24 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'front')));
 
 app.post('/upload', upload.single('userfile'), async (req, res) => {
-  console.log(req.file);
-  const result = await start(req.file.path);
-  fs.writeFileSync(__dirname+"/text.txt",result,'utf8');
+  const optionMenu=optionCheck(req.body.translate, req.body.rule);
+  switch(optionMenu){
+    case "둘다":
+
+    case "번역":
+
+    case "교정":
+
+    case "원본":
+      
+  }
+
   res.status(201).json({
     result,
     filepath: '/uploads/'+req.file.filename 
   });
 });
 
-//translate <-- 
 
 app.listen(port, function() {
   console.log('ex-app listen port : '+ port);
