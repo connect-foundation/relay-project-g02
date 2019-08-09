@@ -14,8 +14,8 @@ const sendInputFileImage = () => {
   document.getElementById("inputFileForm").addEventListener("submit", event => {
     const formData = new FormData(event.target);
     const ocrResult = document.getElementById("ocrResult");
-    //const url = "http://localhost:8080/upload";
-    const url = "http://10.81.24.175:8080/upload";
+    const url = "http://localhost:8080/upload";
+    //const url = "http://10.81.24.175:8080/upload";
     
     const options = {
       method: "POST",
