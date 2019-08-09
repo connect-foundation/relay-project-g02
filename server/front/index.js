@@ -80,7 +80,7 @@ const shareLink = () => {
 
   shareBtn.addEventListener('click', (e) => {
     if(ocrResult.value.length === 0) {
-      return;
+      link = '';
     }else{
       link = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(ocrResult.value);
     }

@@ -83,12 +83,9 @@ section {
     /* background-image: url("./board.png"); */
     /* background-repeat: no-repeat; */
 }
-#inputFileLabel{
-    margin-top:30px;
-    color:#dee2e6;
-}
 .my-img {
     flex:1;
+    position:relative;
 }
 
 .my-img img {
@@ -98,6 +95,10 @@ section {
     max-width: 630px;
     visibility: hidden;
     background:#ddd;
+}
+#inputFileLabel{
+    margin-top:30px;
+    color:#868e96;
 }
 #inputFileForm {
     border-top: 1px solid #dee2e6;
@@ -197,9 +198,9 @@ textarea{
   /* border: 1px solid #dee2e6; */
 }
 
-textarea:-ms-input-placeholder {color:#868e96;}
-textarea::-moz-placeholder {color:#868e96;}
-textarea::-webkit-input-placeholder {color: #868e96;}
+textarea:-ms-input-placeholder {color:#868e96; font-size:1rem;}
+textarea::-moz-placeholder {color:#868e96;font-size:1rem;}
+textarea::-webkit-input-placeholder {color: #868e96;font-size:1rem;}
 
 /* textarea:focus{2px solid #2d303a91} */
 /* textarea:focus, */
@@ -214,23 +215,35 @@ textarea::-webkit-input-placeholder {color: #868e96;}
 }
 
 #downBtn {
-    
     border: none;
+    width: 80px;
     height: 100%;
-    background-color: white;
-    color: #868e96;
+    background-color: #f76707;
+    color: white;
     cursor: pointer;
     transition: all 0.2s;
+    font-size: 0.9rem;
 }
+
+#downBtn:hover {
+    background:#ff922b;   
+}
+
 
 #shareBtn {
     border: none;
     border-right: 1px solid #dee2e6;
     border-left: 1px solid #dee2e6;
+    width: 80px;
     height: 100%;
     margin-left: -4px;
-    background-color: white;
-    color: #868e96;
+    background-color: #f76707;
+    transition: all 0.2s;
+    color: white;
+    font-size: 0.9rem;
+}
+#shareBtn:hover {
+    background:#ff922b;   
 }
 
 .blinking {
