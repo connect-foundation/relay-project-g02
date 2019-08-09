@@ -83,6 +83,10 @@ section {
     /* background-image: url("./board.png"); */
     /* background-repeat: no-repeat; */
 }
+#inputFileLabel{
+    margin-top:30px;
+    color:#dee2e6;
+}
 .my-img {
     flex:1;
 }
@@ -112,22 +116,29 @@ section {
 }
 .input-group{
     display:flex;
-    margin-right:20px;
+    /* margin-right:20px; */
 }
-.custom-file{
-    margin:0 10px;
+.BTN{
+    width:80px;
+    height:50px;
+    /* margin:0 10px; */
+    background-color: #f76707; 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    transition: all 0.2s;
+}
+.BTN:hover{
+    background:#ff922b;
 }
 .custom-file label {
-    width:50px; 
-    height:50px;
     padding:0 10px;
     color: #343a40; 
-    background-color: #f76707; 
     color:#fff;
     font-size:0.9rem;
     cursor: pointer;  
 } 
-
 .custom-file input[type="file"] {
      /* 파일 필드 숨기기 */ 
      display:none;
@@ -135,6 +146,12 @@ section {
      padding: 0; margin: -1px; 
      overflow: hidden; 
      /* clip:rect(0,0,0,0); border: 0; */
+}
+#inputFileBtn{
+    border:none;
+    color:#fff;
+    font-size:0.9rem;
+    border-left:1px solid #fff;
 }
 /* input[type="checkbox"] {
     display:none;
@@ -202,6 +219,8 @@ textarea::-webkit-input-placeholder {color: #868e96;}
     height: 100%;
     background-color: white;
     color: #868e96;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
 #shareBtn {
@@ -237,7 +256,6 @@ textarea::-webkit-input-placeholder {color: #868e96;}
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */                          
 }
@@ -250,7 +268,6 @@ textarea::-webkit-input-placeholder {color: #868e96;}
 }
 .close:hover,
 .close:focus {
-    color: black;
     text-decoration: none;
     cursor: pointer;
 }

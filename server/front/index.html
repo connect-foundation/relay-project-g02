@@ -22,6 +22,8 @@
     <header>
       <!-- <img src="scan.png" style="padding-top:20px;height: 220px" /> -->
       <h1>Boostcamp Scanner</h1>
+      <a id="about" href="./about.html">about</a>
+
     </header>
       <div class="wrap">
       <section class="board">
@@ -36,19 +38,19 @@
             <input type="checkbox" name="rule" value="ture" />맞춤법
           </div>
           <div class="input-group">
-            <div class="custom-file">
+            <div class="BTN custom-file">
               <label class="custom-file-label">업로드
                 <input type="file" name="userfile" class="custom-file-input" id="inputFile" name="userfile"
                   aria-describedby="inputFileBtn" accept=".jpg, .jpeg, .png" />
               </label>
             </div>
             <div class="input-group-append">
-              <button
-                class="btn btn-outline-secondary"
+            <button
+                class="BTN btn btn-outline-secondary"
                 type="submit"
                 id="inputFileBtn"
               >
-                제출하기
+                스캔
             </button>
 
             </div>
@@ -66,15 +68,13 @@
             <button id="downBtn">다운받기</button>
                
             <button id="shareBtn">공유하기</button>
-          <a href="./about.html">about</a>
             
             <!-- The Modal -->
             <div id="alertModal" class="modal">
         
               <!-- Modal content -->
               <div class="modal-content">
-                <span class="close">&times;</span>  
-                <h1>공유하기</h1>
+                <h1>공유하기<span class="close">&times;</span></h1>
                 <input type="text" id="shareLink" readonly="readonly"/>
                 <p></p>
                 <div class="buttons">

@@ -79,7 +79,11 @@ const shareLink = () => {
   let link;
 
   shareBtn.addEventListener('click', (e) => {
-    link = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(ocrResult.value);
+    if(ocrResult.value.length === 0) {
+      return;
+    }else{
+      link = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(ocrResult.value);
+    }
     modal.style.display = "block";
     shareLink.value = link;
     shareLink.select();
@@ -92,7 +96,7 @@ const shareLink = () => {
   closeBtn.onclick = function() {
     modal.style.display = "none";
   }
-  
+
   window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
