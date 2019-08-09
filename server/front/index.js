@@ -76,9 +76,11 @@ const shareLink = () => {
   const copyBtn = document.getElementById('copyBtn');
   const closeBtn = document.getElementsByClassName("close")[0]; 
   const ocrResult = document.getElementById("ocrResult");
+  const copyText = document.getElementById('copyText');
   let link;
 
   shareBtn.addEventListener('click', (e) => {
+    copyText.innerText = 'Copy 버튼을 클릭해주세요.';
     if(ocrResult.value.length === 0) {
       link = '';
     }else{
@@ -90,7 +92,12 @@ const shareLink = () => {
   })
 
   copyBtn.addEventListener('click', (e) => {
-    copyToClipboard(link);
+    if(ocrResult.value.length !== 0) {
+      copyToClipboard(link);
+      copyText.innerText = '링크가 클립보드로 복사되었습니다.';
+    }else{
+      copyText.innerText = '복사할 내용이 없습니다.';
+    }
   });
 
   closeBtn.onclick = function() {
@@ -99,7 +106,7 @@ const shareLink = () => {
 
   window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+      modal.style.display = "none";
     }
   }
 }

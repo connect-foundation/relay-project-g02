@@ -22,15 +22,15 @@
     <header>
       <!-- <img src="scan.png" style="padding-top:20px;height: 220px" /> -->
       <h1>Boostcamp Scanner</h1>
-      <a id="about" href="./about.html">about</a>
+      <a id="about" href="./about.html">people</a>
 
     </header>
       <div class="wrap">
       <section class="board">
         <div class="my-img">
-          <label class="lab" for="inputFile" id="inputFileLabel">이미지 파일
-          </label>
           <img src="" alt="" id="requestImage" />
+          <label class="lab" for="inputFile" id="inputFileLabel">이미지 파일 이름
+          </label>
         </div>
         <form id="inputFileForm" onsubmit="return false">
           <div class="check">
@@ -77,18 +77,16 @@
                 <h1>공유하기<span class="close">&times;</span></h1>
                 <div class="modal-main">
                   <input type="text" id="shareLink" readonly="readonly"/>
-                  <p></p>
-                  <div class="buttons">
+                  <p id="copyText">Copy 버튼을 클릭해주세요.</p>
                     <button id="copyBtn">Copy</button>
-                  </div>
                 </div>
               </div>
             </div>
         </div>
       </section>
     </div>
-    <!-- <footer>
-      <span> 부스트캠프 파이팅! </span>
-    </footer> -->
+    <footer>
+      <span> Copyright 2019. BoostCamp 🐥</span>
+    </footer>
   </body>
 </html>

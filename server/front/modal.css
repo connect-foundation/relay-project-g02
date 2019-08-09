@@ -19,9 +19,41 @@
 .modal-content .modal-main {
     width: 100%;
     display:flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
+.modal-main input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    outline: none;
+    box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+}
+.modal-main p {
+    width: 100%;
+    font-size: 10px;
+    text-align: right;
+    color: #343a40;
+    padding: 10px;
+}
+.modal-main button {
+    margin-top: 20px;
+    width: 50%;
+    padding: 5px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: #F76706;
+    font-size: 13px;
+    transition: all .3s linear;
+}
+.modal-main button:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
+}
+
 .modal-content .close {
     transition: all .3s linear;
     color: #fff;
