@@ -1,5 +1,6 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
+@import 'modal.css';
 * {
   font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif;
   box-sizing: border-box;
@@ -109,21 +110,31 @@ section {
 .check input{
     /* margin-right: 10px; */
 }
-
-.custom-file label { 
+.input-group{
+    display:flex;
+    margin-right:20px;
+}
+.custom-file{
+    margin:0 10px;
+}
+.custom-file label {
+    width:50px; 
+    height:50px;
     padding:0 10px;
     color: #343a40; 
     background-color: #f76707; 
+    color:#fff;
+    font-size:0.9rem;
     cursor: pointer;  
-    border-radius: .25em; 
 } 
 
 .custom-file input[type="file"] {
      /* 파일 필드 숨기기 */ 
+     display:none;
      width: 1px; height: 1px; 
      padding: 0; margin: -1px; 
      overflow: hidden; 
-     clip:rect(0,0,0,0); border: 0;
+     /* clip:rect(0,0,0,0); border: 0; */
 }
 /* input[type="checkbox"] {
     display:none;

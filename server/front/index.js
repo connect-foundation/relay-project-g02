@@ -1,7 +1,6 @@
 //import { request } from "gaxios";
 
 let fileName = '';
-let link=''
 const changeInputFileLabel = () => {
   const inputFile = document.getElementById("inputFile");
   inputFile.addEventListener("change", () => {
@@ -70,19 +69,6 @@ const downloadTxt = () => {
   })
 }
 
-// const shareLink = () => {
-//   const ocrResult = document.getElementById("ocrResult");
-//   const shareBtn = document.getElementById('shareBtn');
-//   shareBtn.addEventListener('click', (e) => {
-//     if(ocrResult.value.length === 0) {
-//       return;
-//     }
-//     const link = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(ocrResult.value);
-//     copyToClipboard(link);
-//     alert('Copied');
-//   })
-// }
-
 const shareLink = () => {
   const modal = document.getElementById('alertModal');
   const shareBtn = document.getElementById("shareBtn");
@@ -93,24 +79,24 @@ const shareLink = () => {
   let link;
 
   shareBtn.addEventListener('click', (e) => {
-      const link = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(ocrResult.value);
-      modal.style.display = "block";
-      shareLink.value = link;
-      shareLink.select();
+    link = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(ocrResult.value);
+    modal.style.display = "block";
+    shareLink.value = link;
+    shareLink.select();
   })
+
   copyBtn.addEventListener('click', (e) => {
-    const link = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(ocrResult.value);
     copyToClipboard(link);
-    alert('Copy!!');
   });
 
   closeBtn.onclick = function() {
-      modal.style.display = "none";
+    modal.style.display = "none";
   }
+  
   window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
   }
 }
 
