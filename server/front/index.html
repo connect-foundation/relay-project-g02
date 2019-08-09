@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link
+    <link rel="stylesheet" href="reset.css">
+    <!-- <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -13,61 +14,79 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
-    />
+    /> -->
     <link rel="stylesheet" href="./index.css" />
     <script src="./index.js"></script>
   </head>
   <body class="container">
     <header>
-      <img src="scan.png" style="padding-top:20px;height: 220px" />
+      <!-- <img src="scan.png" style="padding-top:20px;height: 220px" /> -->
       <h1>Boostcamp Scanner</h1>
     </header>
-
-    <section class="board">
-      <form id="inputFileForm" onsubmit="return false">
-        <div class="check">
-          <input type="checkbox" name="translate" value="ture" />번역
-          <input type="checkbox" name="rule" value="ture" />맞춤법
-        </div>
-        <div class="input-group" style="position: static">
-          <div class="custom-file">
-            <input
-              type="file"
-              name="userfile"
-              class="custom-file-input"
-              id="inputFile"
-              name="userfile"
-              aria-describedby="inputFileBtn"
-              accept=".jpg, .jpeg, .png"
-            />
-            <label class="custom-file-label" for="inputFile" id="inputFileLabel"
-              >파일 선택하기</label
-            >
-          </div>
-          <div class="input-group-append">
-            <button
-              class="btn btn-outline-secondary"
-              type="submit"
-              id="inputFileBtn"
-            >
-              제출하기
-            </button>
-          </div>
-        </div>
+      <div class="wrap">
+      <section class="board">
         <div class="my-img">
+          <label class="custom-file-label" for="inputFile" id="inputFileLabel">이미지 파일
+            </label>
           <img src="" alt="" id="requestImage" />
         </div>
-      </form>
-    </section>
+        <form id="inputFileForm" onsubmit="return false">
+          <div class="check">
+            <input type="checkbox" name="translate" value="ture" />번역
+            <input type="checkbox" name="rule" value="ture" />맞춤법
+          </div>
+          <div class="input-group" style="position: static">
+            <div class="custom-file">
+              <label class="custom-file-label">업로드
+                <input type="file" name="userfile" class="custom-file-input" id="inputFile" name="userfile"
+                  aria-describedby="inputFileBtn" accept=".jpg, .jpeg, .png" />
+              </label>
+            </div>
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                type="submit"
+                id="inputFileBtn"
+              >
+                제출하기
+            </button>
 
-    <section>
-      <h2>OCR 결과</h2>
-      <div class="ocr-container">
-        <p id="ocrResult">[ 여기에 결과가 출력됩니다 ]</p>
-      </div>
-    </section>
-    <footer>
+            </div>
+          </div>     
+        </form>
+      </section>
+
+      <section>
+        
+        <div class="ocr-container">
+          <!-- <p id="ocrResult">[ 여기에 결과가 출력됩니다 ]</p> -->
+          <!-- <h2>OCR 결과</h2> -->
+          <textarea id="ocrResult" placeholder="여기에 결과가 출력됩니다" readonly="readonly" disabled></textarea >
+          <div class="btns">
+            <button id="downBtn">다운받기</button>
+               
+            <button id="shareBtn">공유하기</button>
+          <a href="./about.html">about</a>
+            
+            <!-- The Modal -->
+            <div id="alertModal" class="modal">
+        
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>  
+                <h1>공유하기</h1>
+                <input type="text" id="shareLink" readonly="readonly"/>
+                <p></p>
+                <div class="buttons">
+                  <button id="copyBtn">Copy</button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+    </div>
+    <!-- <footer>
       <span> 부스트캠프 파이팅! </span>
-    </footer>
+    </footer> -->
   </body>
 </html>

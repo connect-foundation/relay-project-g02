@@ -1,83 +1,206 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
+* {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif;
+  box-sizing: border-box;
+}
 html {
-    margin: 0;
-    padding: 0;
+    width:100%;
+    height:100%;
 }
 
 body {
-    text-align: center;
-    background-color: black;
+    /* text-align: center; */
+    background: #f8f9fa;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    overflow:hidden;
+    /* background-color: #000; */
     max-width: 100%;
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif;
 }
-
+.wrap{
+    width:90%;
+    margin:0 auto;
+    flex:9;
+    /* overflow:hidden; */
+    display:flex;
+}
 h2 {
     position: relative;
     top: 20px;
-    color: #fff;
+    color: #000;
 }
 
 header {
+    flex:1;
+    display:flex;
+    align-items: center;
     font-size: 32px solid;
     top: 0px;
     width: 100%;
-    height: 310px;
-    background-color: rgb(93, 205, 240);
-    text-align: center;
+    height: 60px;
+    border-bottom:1px solid #dee2e6;
+    background:#fff;
 }
-
+header h1{
+    margin-left:30px;
+    font-weight: bold;
+}
+/* footer{
+    flex:1;
+    position:absolute;
+    bottom:0;
+    background:#f00;
+    color:#fff;
+    font-size:0.8rem;
+    width:100%;
+    text-align:center;
+    padding:20px 0;
+} */
 h1 {
     padding-bottom: 10px;
 }
 
 section {
-    position: relative;
-    top: 50px;
-    text-align: center;
+    width:50%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
 }
 
 .board {
-    margin: 0 auto;
+    height: 40vh;
+    margin: 100px auto;
     text-align: center;
-    position: relative;
-    top: 50px;
-    max-width: fit-content;
-    background-image: url("./board.png");
-    background-repeat: no-repeat;
+    border: 1px solid #dee2e6;
+    background:#fff;
+    display:flex;
+    flex-direction: column;
+    /* background-image: url("./board.png"); */
+    /* background-repeat: no-repeat; */
+}
+.my-img {
+    flex:1;
 }
 
-#inputFileForm {
-    width: 650px;
-    height: 430px;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-
-.board .check {
-    padding-top: 40px;
-    padding-right: 30px;
-}
-
-.check {
-    text-align: right;
-}
-
-form .my-img {
-    position: relative;
-    top: 70px;
-    text-align: center;
-}
-
-form .my-img img {
+.my-img img {
     position: relative;
     bottom: 40px;
-    max-height: 280px;
-    max-width: 600px;
+    max-height: 120px;
+    max-width: 630px;
     visibility: hidden;
+    background:#ddd;
+}
+#inputFileForm {
+    border-top: 1px solid #dee2e6;
+    height:50px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.check{
+    font-size:1rem;
+    color:#343a40;
+    margin:0 10px;
+}
+.check input{
+    /* margin-right: 10px; */
 }
 
+.custom-file label { 
+    padding:0 10px;
+    color: #343a40; 
+    background-color: #f76707; 
+    cursor: pointer;  
+    border-radius: .25em; 
+} 
+
+.custom-file input[type="file"] {
+     /* 파일 필드 숨기기 */ 
+     width: 1px; height: 1px; 
+     padding: 0; margin: -1px; 
+     overflow: hidden; 
+     clip:rect(0,0,0,0); border: 0;
+}
+/* input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:#ddd;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+    background:#ddd;
+    /* background:url(check_radio_sheet.png) -19px top no-repeat; */
+
+/* //// */
 .ocr-container {
-    padding: 1rem;
-    background-color: black;
-    color: white;
+    width:95%;
+    margin-left:10px;
+    color: #000;
+    height:40vh;
+    margin: 100px auto;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    border: 1px solid #dee2e6;
+    background:#fff;
+}
+/* ocr 결과 */
+#ocrResult { 
+    flex:1;
+    color: black;
+    padding : 20px;
+    resize: none; /* 사용자 임의 변경 불가 */
+}
+
+textarea{ 
+  padding:0;  
+  margin:0;
+  border:none ;
+  /* border: 1px solid #dee2e6; */
+}
+
+textarea:-ms-input-placeholder {color:#868e96;}
+textarea::-moz-placeholder {color:#868e96;}
+textarea::-webkit-input-placeholder {color: #868e96;}
+
+/* textarea:focus{2px solid #2d303a91} */
+/* textarea:focus, */
+/* textarea:hover{box-shadow:0px 0px 13px 0px #059403} */
+
+/* ocr download, share 버튼 */
+.btns {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border-top: 1px solid #dee2e6;
+}
+
+#downBtn {
+    
+    border: none;
+    height: 100%;
+    background-color: white;
+    color: #868e96;
+}
+
+#shareBtn {
+    border: none;
+    border-right: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+    height: 100%;
+    margin-left: -4px;
+    background-color: white;
+    color: #868e96;
 }
 
 .blinking {
@@ -85,6 +208,42 @@ form .my-img img {
     -moz-animation: blink 0.5s ease-in-out infinite alternate;
     animation: blink 0.5s ease-in-out infinite alternate;
 }
+        /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */                          
+}
+        /* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 @-webkit-keyframes blink {
     0% {
@@ -112,3 +271,4 @@ form .my-img img {
         opacity: 1;
     }
 }
+

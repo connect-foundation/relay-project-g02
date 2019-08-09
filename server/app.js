@@ -75,6 +75,11 @@ app.post('/upload', upload.single('userfile'), async (req, res) => {
   });
 });
 
+app.get('/:filename', (req,res)=>{
+    let file = __dirname+'/uploads/'+req.params.filename;
+    res.download(file);
+})
+
 
 app.listen(port, function() {
   console.log('ex-app listen port : '+ port);
